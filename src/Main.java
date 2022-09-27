@@ -1,10 +1,9 @@
 import model.InputData;
-import service.MortageCalculationService;
-import service.MortageCalculationServiceImpl;
-import service.PrintingService;
-import service.PrintingServiceimpl;
+import model.Rate;
+import service.*;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 public class Main {
 
@@ -15,7 +14,12 @@ public class Main {
                 .withMonthsDuration(new BigDecimal("140"));
 
         PrintingService printingService = new PrintingServiceimpl();
-        MortageCalculationService mortageCalculationService = new MortageCalculationServiceImpl(printingService);
+        RateCalculationService rateCalculationService = new RateCalculationServiceImpl();
+
+        MortageCalculationService mortageCalculationService = new MortageCalculationServiceImpl(
+                printingService,
+                rateCalculationService
+        );
         mortageCalculationService.calculate(inputData);
     }
 }
