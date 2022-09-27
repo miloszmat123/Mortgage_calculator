@@ -1,12 +1,17 @@
 package model;
 
 import java.math.BigDecimal;
+import java.math.BigInteger;
+import java.math.RoundingMode;
 import java.time.LocalDate;
 
 public class InputData {
-    private LocalDate repaymnetSstartDate = LocalDate.of(2022, 9, 6);
 
-    private BigDecimal wiborPrecent = new BigDecimal("1.73");
+    private static final BigDecimal PERCENT = BigDecimal.valueOf(100);
+
+    private LocalDate repaymentStartDate = LocalDate.of(2022, 9, 6);
+
+    private BigDecimal wiborPercent = new BigDecimal("1.73");
 
     private BigDecimal amount = new BigDecimal("300000");
 
@@ -14,14 +19,14 @@ public class InputData {
 
     private RateType rateType = RateType.CONSTANT;
 
-    private BigDecimal bankMargin = new BigDecimal("1.9");
+    private BigDecimal bankMarginPercent = new BigDecimal("1.9");
 
-    public InputData withRepaymnetSstartDate(LocalDate repaymnetSstartDate){
-        this.repaymnetSstartDate = repaymnetSstartDate;
+    public InputData withRepaymentStartDate(LocalDate repaymentStartDate){
+        this.repaymentStartDate = repaymentStartDate;
         return this;
     }
-    public InputData withWiborPrecent(BigDecimal wiborPrecent){
-        this.wiborPrecent = wiborPrecent;
+    public InputData withWiborPercent(BigDecimal wiborPercent){
+        this.wiborPercent = wiborPercent;
         return this;
     }
     public InputData withAmount(BigDecimal amount){
@@ -36,19 +41,16 @@ public class InputData {
         this.rateType = rateType;
         return this;
     }
-    public InputData withBankMargin(BigDecimal bankMargin){
-        this.bankMargin = bankMargin;
+    public InputData withBankMarginPercent(BigDecimal bankMarginPercent){
+        this.bankMarginPercent = bankMarginPercent;
         return this;
     }
 
 
-    public LocalDate getRepaymnetSstartDate() {
-        return repaymnetSstartDate;
+    public LocalDate getRepaymentStartDate() {
+        return repaymentStartDate;
     }
 
-    public BigDecimal getWiborPrecent() {
-        return wiborPrecent;
-    }
 
     public BigDecimal getAmount() {
         return amount;
@@ -62,7 +64,11 @@ public class InputData {
         return rateType;
     }
 
-    public BigDecimal getBankMargin() {
-        return bankMargin;
+    public BigDecimal getInterestPercent(){
+        return wiborPercent.add(bankMarginPercent).divide(PERCENT, 10, RoundingMode.HALF_UP);
+    }
+
+    public BigDecimal getInterestDisplay(){
+        return wiborPercent.add(bankMarginPercent).setScale(2, RoundingMode.HALF_UP);
     }
 }

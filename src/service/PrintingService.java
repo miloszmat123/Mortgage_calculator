@@ -9,9 +9,9 @@ public interface PrintingService {
     String YEAR = "ROK: ";
     String MONTH = "MIESIAC: ";
     String DATE = "DATA: ";
-    String MONTHS = "MIESIECY, ";
+    String MONTHS = " MIESIECY ";
     String RATE = "RATA: ";
-    String INTEREST = "ODSTETKI: ";
+    String INTEREST = "OPROCENTOWANIE: ";
     String CAPITAL = "KAPITAL: ";
     String LEFT = "POZOSTALO: ";
     String MORTGAGE_AMOUNT = "KWOTA KREDYTU: ";
