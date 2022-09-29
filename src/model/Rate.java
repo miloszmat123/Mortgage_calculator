@@ -35,4 +35,13 @@ public class Rate {
     public MortgageResidual getMortageResidual() {
         return mortgageResidual;
     }
+
+
+    @Override
+    public String toString() {
+        return "Rate{" +
+                "rateAmounts=" + rateAmounts +
+                ", mortgageResidual=" + mortgageResidual +
+                '}';
+    }
 }

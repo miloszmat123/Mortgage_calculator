@@ -46,11 +46,12 @@ public class AmountsCalculationServiceImpl implements AmountsCalculationService 
     private RateAmounts calculateConstantRate(InputData inputData, Rate previousRate) {
 
         BigDecimal residualAmount = previousRate.getMortageResidual().getAmount();
+        BigDecimal mortgageAmount = inputData.getAmount();
         BigDecimal interestPercent = inputData.getInterestPercent();
         BigDecimal q = calculateQ(interestPercent);
         BigDecimal monthsDuration = inputData.getMonthsDuration();
 
-        BigDecimal rateAmount = calculateConstantRateAmount(q, residualAmount, monthsDuration);
+        BigDecimal rateAmount = calculateConstantRateAmount(q, mortgageAmount, monthsDuration);
         BigDecimal interestAmount = calculateInterestAmount(residualAmount, interestPercent);
         BigDecimal capitalAmount = calculateConstantCapitalAmount(rateAmount, interestAmount);
 
