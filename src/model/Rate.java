@@ -11,13 +11,13 @@ public class Rate {
 
     private final RateAmounts rateAmounts;
 
-    private final MortageResidual mortageResidual;
+    private final MortgageResidual mortgageResidual;
 
-    public Rate(BigDecimal rateNumber, Timepoint timepoint, RateAmounts rateAmounts, MortageResidual mortageResidual) {
+    public Rate(BigDecimal rateNumber, Timepoint timepoint, RateAmounts rateAmounts, MortgageResidual mortgageResidual) {
         this.timepoint = timepoint;
         this.rateNumber = rateNumber;
         this.rateAmounts = rateAmounts;
-        this.mortageResidual = mortageResidual;
+        this.mortgageResidual = mortgageResidual;
     }
 
     public Timepoint getTimepoint() {
@@ -32,7 +32,7 @@ public class Rate {
         return rateAmounts;
     }
 
-    public MortageResidual getMortageResidual() {
-        return mortageResidual;
+    public MortgageResidual getMortageResidual() {
+        return mortgageResidual;
     }
 }

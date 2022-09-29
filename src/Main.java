@@ -1,11 +1,7 @@
 import model.InputData;
-import model.MortageResidual;
-import model.Rate;
-import model.RateAmounts;
 import service.*;
 
 import java.math.BigDecimal;
-import java.util.List;
 
 public class Main {
 
@@ -22,10 +18,10 @@ public class Main {
                 new ResidualCalculationServiceImpl()
         );
 
-        MortageCalculationService mortageCalculationService = new MortageCalculationServiceImpl(
+        MortgageCalculationService mortgageCalculationService = new MortageCalculationServiceImpl(
                 printingService,
                 rateCalculationService
         );
-        mortageCalculationService.calculate(inputData);
+        mortgageCalculationService.calculate(inputData);
     }
 }

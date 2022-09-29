@@ -2,13 +2,13 @@ package model;
 
 import java.math.BigDecimal;
 
-public class MortageResidual {
+public class MortgageResidual {
 
     private final BigDecimal amount;
 
     private final BigDecimal duration;
 
-    public MortageResidual(BigDecimal amount, BigDecimal duration) {
+    public MortgageResidual(BigDecimal amount, BigDecimal duration) {
         this.amount = amount;
         this.duration = duration;
     }

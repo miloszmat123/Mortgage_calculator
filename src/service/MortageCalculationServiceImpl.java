@@ -5,7 +5,7 @@ import model.Rate;
 
 import java.util.List;
 
-public class MortageCalculationServiceImpl implements  MortageCalculationService{
+public class MortageCalculationServiceImpl implements MortgageCalculationService {
 
     private final PrintingService printingService;
 
