@@ -11,12 +11,15 @@ public class MortgageCalculationServiceImpl implements MortgageCalculationServic
 
     private final RateCalculationService rateCalculationService;
 
+    private final SummaryCalculationService summaryCalculationService;
+
     public MortgageCalculationServiceImpl(
             PrintingService printingService,
-            RateCalculationService rateCalculationService
-    ) {
+            RateCalculationService rateCalculationService,
+            SummaryCalculationService summaryCalculationService) {
         this.printingService = printingService;
         this.rateCalculationService = rateCalculationService;
+        this.summaryCalculationService = summaryCalculationService;
     }
 
     @Override
@@ -25,5 +28,6 @@ public class MortgageCalculationServiceImpl implements MortgageCalculationServic
 
         List<Rate> rateList = rateCalculationService.calculate(inputData);
         printingService.printRates(rateList);
+        printingService.printSummary(summaryCalculationService.calculate(rateList));
     }
 }

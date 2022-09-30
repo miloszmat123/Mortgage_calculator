@@ -19,10 +19,12 @@ public class Main {
                 new AmountsCalculationServiceImpl(),
                 new ResidualCalculationServiceImpl()
         );
+        SummaryCalculationService summaryCalculationService = new SummaryCalculationServiceImpl();
 
         MortgageCalculationService mortgageCalculationService = new MortgageCalculationServiceImpl(
                 printingService,
-                rateCalculationService
+                rateCalculationService,
+                summaryCalculationService
         );
         mortgageCalculationService.calculate(inputData);
     }

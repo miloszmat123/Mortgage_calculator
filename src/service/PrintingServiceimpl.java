@@ -2,6 +2,7 @@ package service;
 
 import model.InputData;
 import model.Rate;
+import model.Summary;
 
 import javax.swing.*;
 import java.math.BigDecimal;
@@ -55,5 +56,15 @@ public class PrintingServiceimpl implements PrintingService{
                 System.out.println();
             }
         }
+    }
+
+    @Override
+    public void printSummary(Summary summary) {
+        StringBuilder msg = new StringBuilder(NEW_LINE);
+
+        msg.append(INTEREST_SUM).append(summary.getInterestSummary());
+
+
+        printMessage(msg);
     }
 }

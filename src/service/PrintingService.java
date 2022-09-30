@@ -2,6 +2,7 @@ package service;
 
 import model.InputData;
 import model.Rate;
+import model.Summary;
 
 import java.util.List;
 
@@ -28,4 +29,6 @@ public interface PrintingService {
     void printInputDataInfo (final InputData inputData);
 
     void printRates(List<Rate> rates);
+
+    void  printSummary(Summary summary);
 }
