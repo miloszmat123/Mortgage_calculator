@@ -88,7 +88,7 @@ public class AmountsCalculationServiceImpl implements AmountsCalculationService 
     }
 
     private BigDecimal calculateInterestAmount(BigDecimal amount, BigDecimal interestPercent) {
-        return amount.multiply(interestPercent).divide(YEAR, 10, RoundingMode.HALF_UP);
+        return amount.multiply(interestPercent).divide(YEAR, 50, RoundingMode.HALF_UP);
     }
 
     private BigDecimal calculateConstantCapitalAmount(BigDecimal rateAmount, BigDecimal interestAmount) {
@@ -99,7 +99,7 @@ public class AmountsCalculationServiceImpl implements AmountsCalculationService 
         return mortgageAmount
                 .multiply(q.pow(monthDuration.intValue()))
                 .multiply(q.subtract(BigDecimal.ONE))
-                .divide(q.pow(monthDuration.intValue()).subtract(BigDecimal.ONE), 2, RoundingMode.HALF_UP);
+                .divide(q.pow(monthDuration.intValue()).subtract(BigDecimal.ONE), 50, RoundingMode.HALF_UP);
     }
 
     private BigDecimal calculateQ (BigDecimal interestPercent){
@@ -107,7 +107,7 @@ public class AmountsCalculationServiceImpl implements AmountsCalculationService 
     }
 
     private BigDecimal calculateDecreasingCapitalAmount(BigDecimal residualAmount, BigDecimal monthsDuration) {
-        return residualAmount.divide(monthsDuration, 10, RoundingMode.HALF_UP);
+        return residualAmount.divide(monthsDuration, 50, RoundingMode.HALF_UP);
     }
 
     private BigDecimal calculateDecreasingRateAmount(BigDecimal interestAmount, BigDecimal capitalAmount) {

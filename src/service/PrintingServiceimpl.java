@@ -66,5 +66,7 @@ public class PrintingServiceimpl implements PrintingService{
 
 
         printMessage(msg);
+
+        System.out.println();
     }
 }

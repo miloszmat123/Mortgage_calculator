@@ -9,7 +9,7 @@ public class Main {
     public static void main(String[] args) {
         InputData inputData = new InputData()
                 .withAmount(new BigDecimal("298000"))
-                .withMonthsDuration(new BigDecimal("180"))
+                .withMonthsDuration(new BigDecimal("400"))
                 .withRateType(RateType.CONSTANT);
 
 
