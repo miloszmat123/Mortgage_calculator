@@ -1,4 +1,4 @@
-# Mortgage_calculator
+# Mortgage calculator
 
 Mortgage calulator is a simple app, which can count your mortgage rates.
 
