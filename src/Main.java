@@ -10,7 +10,7 @@ public class Main {
         InputData inputData = new InputData()
                 .withAmount(new BigDecimal("298000"))
                 .withMonthsDuration(new BigDecimal("180"))
-                .withRateType(RateType.DECREASING);
+                .withRateType(RateType.CONSTANT);
 
 
         PrintingService printingService = new PrintingServiceimpl();
