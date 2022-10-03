@@ -13,7 +13,7 @@ public class Main {
                 .withRateType(RateType.CONSTANT);
 
 
-        PrintingService printingService = new PrintingServiceimpl();
+        PrintingService printingService = new PrintingServiceImpl();
         RateCalculationService rateCalculationService = new RateCalculationServiceImpl(
                 new TimepointServiceImpl(),
                 new AmountsCalculationServiceImpl(),

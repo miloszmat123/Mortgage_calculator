@@ -4,11 +4,11 @@ import model.InputData;
 import model.Rate;
 import model.Summary;
 
-import javax.swing.*;
 import java.math.BigDecimal;
 import java.util.List;
+import java.util.Optional;
 
-public class PrintingServiceimpl implements PrintingService{
+public class PrintingServiceImpl implements PrintingService{
 
 
     @Override
@@ -19,6 +19,8 @@ public class PrintingServiceimpl implements PrintingService{
         msg.append(MORTGAGE_PERIOD).append(inputData.getMonthsDuration()).append(MONTHS);
         msg.append(NEW_LINE);
         msg.append(INTEREST).append(inputData.getInterestDisplay()).append(PERCENT);
+        msg.append(NEW_LINE);
+
 
         printMessage(msg);
     }

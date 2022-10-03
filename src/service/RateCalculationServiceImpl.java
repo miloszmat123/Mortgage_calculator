@@ -3,6 +3,7 @@ package service;
 import model.*;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -53,6 +54,9 @@ public class RateCalculationServiceImpl implements RateCalculationService {
             Rate nextRate = calculateRate(index, inputData, previousRate);
             rates.add(nextRate);
             previousRate = nextRate;
+            if (BigDecimal.ZERO.equals(nextRate.getMortageResidual().getAmount().setScale(0, RoundingMode.HALF_UP))){
+                break;
+            }
 
         }
         return rates;
