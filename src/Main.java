@@ -17,7 +17,9 @@ public class Main {
         RateCalculationService rateCalculationService = new RateCalculationServiceImpl(
                 new TimepointServiceImpl(),
                 new AmountsCalculationServiceImpl(),
-                new ResidualCalculationServiceImpl()
+                new ResidualCalculationServiceImpl(),
+                new OverPaymentCalculationServiceImpl(),
+                new ReferenceCalculationServiceImpl()
         );
         SummaryCalculationService summaryCalculationService = new SummaryCalculationServiceImpl();
 

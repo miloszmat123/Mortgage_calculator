@@ -62,7 +62,8 @@ public class PrintingServiceimpl implements PrintingService{
     public void printSummary(Summary summary) {
         StringBuilder msg = new StringBuilder(NEW_LINE);
 
-        msg.append(INTEREST_SUM).append(summary.getInterestSummary());
+        msg.append(INTEREST_SUM).append(summary.getInterestSummary()).append(NEW_LINE);
+        msg.append(PROVISION_SUM).append(summary.getOverpaymentProvisionSummary());
 
 
         printMessage(msg);

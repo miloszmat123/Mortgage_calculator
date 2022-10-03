@@ -4,20 +4,27 @@ import java.math.BigDecimal;
 
 public class Rate {
 
-    private final Timepoint timepoint;
-
     private final BigDecimal rateNumber;
 
+    private final Timepoint timepoint;
 
     private final RateAmounts rateAmounts;
 
     private final MortgageResidual mortgageResidual;
 
-    public Rate(BigDecimal rateNumber, Timepoint timepoint, RateAmounts rateAmounts, MortgageResidual mortgageResidual) {
-        this.timepoint = timepoint;
+    private final MortgageReference mortgageReference;
+
+    public Rate(
+            BigDecimal rateNumber,
+            Timepoint timepoint,
+            RateAmounts rateAmounts,
+            MortgageResidual mortgageResidual,
+            MortgageReference mortgageReference) {
         this.rateNumber = rateNumber;
+        this.timepoint = timepoint;
         this.rateAmounts = rateAmounts;
         this.mortgageResidual = mortgageResidual;
+        this.mortgageReference = mortgageReference;
     }
 
     public Timepoint getTimepoint() {
@@ -37,11 +44,5 @@ public class Rate {
     }
 
 
-    @Override
-    public String toString() {
-        return "Rate{" +
-                "rateAmounts=" + rateAmounts +
-                ", mortgageResidual=" + mortgageResidual +
-                '}';
-    }
+
 }

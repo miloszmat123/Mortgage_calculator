@@ -9,6 +9,7 @@ import java.util.List;
 public interface PrintingService {
 
     String INTEREST_SUM = "SUMA ODSETEK: ";
+    String PROVISION_SUM = "SUMA PROWIZJI: ";
     String RATE_NUMBER = "NR: ";
     String YEAR = "ROK: ";
     String MONTH = "MIESIAC: ";

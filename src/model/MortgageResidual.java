@@ -24,11 +24,4 @@ public class MortgageResidual {
     }
 
 
-    @Override
-    public String toString() {
-        return "MortgageResidual{" +
-                "amount=" + amount +
-                ", duration=" + duration +
-                '}';
-    }
 }
