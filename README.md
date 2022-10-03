@@ -1,6 +1,6 @@
 # Mortgage calculator
 
-Mortgage calulator is a simple app, which can count your mortgage rates.
+Mortgage calculator is a simple app, which can count your mortgage rates.
 
 List of Parameters:
 - repayment start date
