@@ -66,7 +66,8 @@ public class PrintingServiceImpl implements PrintingService{
 
         msg.append(INTEREST_SUM).append(summary.getInterestSummary()).append(NEW_LINE);
         msg.append(PROVISION_SUM).append(summary.getOverpaymentProvisionSummary());
-
+        msg.append(NEW_LINE);
+        msg.append(MONTHS_SAVED).append(summary.getMonthsSaved());
 
         printMessage(msg);
 

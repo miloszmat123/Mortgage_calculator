@@ -8,9 +8,12 @@ public class Summary {
 
     private final BigDecimal overpaymentProvisionSummary;
 
-    public Summary(BigDecimal interestSummary, BigDecimal overpaymentProvisionSummary) {
+    private final BigDecimal monthsSaved;
+
+    public Summary(BigDecimal interestSummary, BigDecimal overpaymentProvisionSummary, BigDecimal monthsSaved) {
         this.interestSummary = interestSummary;
         this.overpaymentProvisionSummary = overpaymentProvisionSummary;
+        this.monthsSaved = monthsSaved;
     }
 
     public BigDecimal getInterestSummary() {
@@ -19,5 +22,9 @@ public class Summary {
 
     public BigDecimal getOverpaymentProvisionSummary() {
         return overpaymentProvisionSummary;
+    }
+
+    public BigDecimal getMonthsSaved() {
+        return monthsSaved;
     }
 }

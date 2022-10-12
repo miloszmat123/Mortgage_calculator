@@ -22,6 +22,7 @@ public interface PrintingService {
     String LEFT_MONTHS = "POZOSTALO MIESIECY:";
     String MORTGAGE_AMOUNT = "KWOTA KREDYTU: ";
     String MORTGAGE_PERIOD = "OKRES KREDYTOWANIA: ";
+    String MONTHS_SAVED = "ZAOSZCZEDZONE MIESIACE: ";
 
     String CURRENCY = " ZL ";
     String NEW_LINE = "\n";
